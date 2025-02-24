@@ -1,0 +1,11 @@
+#botaoNovaLista {
+    width: 40px;
+    height: 40px;
+    padding: 5.18px;
+    position: fixed;
+    bottom: 1em;
+    left: 1em;
+    background-color: green;
+    color: white;
+    border-radius: 50%;
+}
