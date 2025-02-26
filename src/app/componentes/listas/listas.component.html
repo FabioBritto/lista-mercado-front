@@ -5,9 +5,10 @@
         </div>
     </div>
     <hr />
-    <div class="row">
-        <div class="col-4">dd/mm/yyyy</div>
-        <div class="col-8">Valor: R$ XXXX,XX </div>
+    <!-- A diretriz *ngFor vai replicar este componente pra cada item da minha lista-->
+    <div class="row lista" *ngFor="let ITEM of listas">
+        <div class="col-4"> {{ ITEM.data}} </div>
+        <div class="col-8">{{ ITEM.nomeMercado }} R${{ ITEM.valorTotal}} </div>
     </div>
 </div>
 

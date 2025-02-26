@@ -9,3 +9,8 @@
     color: white;
     border-radius: 50%;
 }
+
+.lista {
+    border-bottom: 1px solid gray;
+    font-weight: bold;
+}
