@@ -24,4 +24,8 @@ export class ListasService {
     return this.http.get<Lista[]>(environment.urlAPI+"/listas");
   }
 
+  public cadastrarLista(lista:Lista): Observable<Lista>{
+    return this.http.post<Lista>(environment.urlAPI+"/lista", lista);
+  }
+
 }

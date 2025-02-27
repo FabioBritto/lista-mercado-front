@@ -27,15 +27,33 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">INCLUIR NOVA LISTA</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          ...
+          <div class="mb-3">
+            <!-- Todo o componente tem HTML e TypeScript
+             O que está em TypeScript, eu posso passar para o HTML por {{ EXEMPLO.exemplo }}
+             Ou por [(ngModel)].
+             Quando eu uso o operador [], eu digo que é algo do TypeScript para o HTML. 
+             Como se fosse um operador de Leitura
+             O () é do HTML para o TypeScript.
+             Quando eu uso este modelo, eu faço uma ligação de forma que um atinge o outro e vice-versa -->
+            <label for="txtData" class="form-label">Data da Compra:</label>
+            <input type="date" class="form-control" id="txtData" [(ngModel)]="novaLista.data">
+          </div>
+          <div class="mb-3">
+            <label for="txtLocal" class="form-label">Nome do Mercado:</label>
+            <input type="text" class="form-control" id="txtLocal" [(ngModel)]="novaLista.nomeMercado">
+          </div>
+          <div class="mb-3">
+            <label for="txtValorTotal" class="form-label">Orçamento/Valor Total:</label>
+            <input type="number" class="form-control" id="txtValorTotal" [(ngModel)]="novaLista.valorTotal">
+          </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Understood</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CANCELAR</button>
+          <button type="button" class="btn btn-sucess" data-bs-dismiss="modal" (click)="cadastrarLista()">ARMAZENAR</button>
         </div>
       </div>
     </div>

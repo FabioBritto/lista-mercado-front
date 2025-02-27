@@ -10,8 +10,11 @@ import { ListasService } from 'src/app/servicos/listas.service';
 export class ListasComponent implements OnInit {
 
   public listas: Lista[] = [];
+  public novaLista: Lista;
 
-  constructor(private service: ListasService) { }
+  constructor(private service: ListasService) {
+    this.novaLista = new Lista();
+   }
 
   ngOnInit(): void {
     this.getAllListas()
@@ -26,5 +29,18 @@ export class ListasComponent implements OnInit {
     (err) => {
       alert("Erro ao recuperar lista de compras!");
     })
+  }
+
+  public cadastrarLista(){
+    console.log(this.novaLista.data)
+    this.service.cadastrarLista(this.novaLista).subscribe(
+      (res) => {
+        alert("Nova lista cadastrada!")
+        this.getAllListas();
+      },
+      (err) => {
+        alert("Erro ao cadastrar nova lista!")
+      }
+    )
   }
 }
