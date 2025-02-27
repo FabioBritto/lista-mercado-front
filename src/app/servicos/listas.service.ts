@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Lista } from '../model/Lista';
 import { environment } from 'src/environments/environment';
+//import { env } from 'process';
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +27,10 @@ export class ListasService {
 
   public cadastrarLista(lista:Lista): Observable<Lista>{
     return this.http.post<Lista>(environment.urlAPI+"/lista", lista);
+  }
+
+  public recuperarPorId(id: number): Observable<Lista> {
+    return this.http.get<Lista>(environment.urlAPI+"/listas/"+id);
   }
 
 }

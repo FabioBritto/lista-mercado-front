@@ -8,7 +8,7 @@
     <!-- A diretriz *ngFor vai replicar este componente pra cada item da minha lista-->
     <div class="row lista" *ngFor="let ITEM of listas">
         <div class="col-4"> {{ ITEM.data}} </div>
-        <div class="col-8">{{ ITEM.nomeMercado }} R${{ ITEM.valorTotal}} </div>
+        <div class="col-8"><a [routerLink]="['/detalhe',ITEM.id]">{{ ITEM.nomeMercado }} R${{ ITEM.valorTotal}} </a></div>
     </div>
 </div>
 

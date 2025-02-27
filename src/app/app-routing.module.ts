@@ -5,7 +5,7 @@ import { DetalhelistaComponent } from './componentes/detalhelista/detalhelista.c
 
 const routes: Routes = [
 {path:'', component: ListasComponent},
-{path:'detalhe', component : DetalhelistaComponent}
+{path:'detalhe/:id', component : DetalhelistaComponent}
 
 ];
 
